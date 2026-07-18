@@ -1,12 +1,33 @@
 # Amneshia
 
-A unified "Single Source of Truth" memory system with RAG for AI Agents (Hermes, Oh My Pi, Antigravity IDE, Claude Desktop, etc.).
+The ultimate "Single Source of Truth" memory system and RAG Hub for AI Agents (Hermes, Claude Desktop, Antigravity IDE, etc.).
 
-## Architecture
-- **Language**: Python (FastAPI + MCP SDK)
-- **Database**: SQLite (built-in, zero native dependencies) + Vector Embeddings for RAG
-- **Dashboard**: React TS (Vite) embedded and served by FastAPI
-- **Auto-Exporter**: Syncs to Hermes `USER.md` and `MEMORY.md` automatically
+## Features
+- **Semantic RAG Search**: Powered by ChromaDB & Local Embeddings to understand *meaning*, not just exact words.
+- **Structured SQLite Core**: Rock-solid, local database for exact-match retrieval.
+- **First-Class MCP Server**: Connect to any MCP-compatible agent instantly via `stdio`.
+- **FastAPI Backend**: Built-in REST API for external/web integrations.
+- **Auto-Exporter**: Synchronizes memories directly to Hermes (`USER.md` and `MEMORY.md`) in real-time.
 
-## Vision
-Amneshia acts as the central brain for all your AI agents and tools. It provides both exact-match memory (structured SQLite) and semantic search (Vector DB for RAG). The built-in MCP server allows *any* MCP-compatible tool (like `codebase-memory-mcp` or Claude Desktop) to connect and utilize the unified memory.
+## Installation (using `uv`)
+```bash
+uv tool install .
+```
+
+## Running the Server
+```bash
+# Run as MCP Server (for Claude Desktop / Hermes / OMP)
+amneshia mcp
+
+# Run as API Server (REST API)
+amneshia api
+```
+
+## Usage in Hermes Agent
+Add to your `~/.hermes/config.yaml`:
+```yaml
+mcp_servers:
+  amneshia:
+    command: "amneshia"
+    args: ["mcp"]
+```
