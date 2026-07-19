@@ -1,4 +1,4 @@
-# 🧠 Amneshia
+# Amneshia
 
 [![Release](https://badgen.net/badge/version/v2.0.0/blue)](https://github.com/SabilMurti/Amneshia/releases)
 [![License](https://badgen.net/badge/license/MIT/green)](LICENSE)
@@ -35,7 +35,7 @@ flowchart TB
 
     subgraph Amneshia ["3. Amneshia v2 Core Knowledge Engine"]
         MCP["🛠️ 18 MCP Tools Surface"]:::core
-        Graph["🧠 Knowledge Graph Engine"]:::core
+        Graph["Knowledge Graph Engine"]:::core
         Sleep["🌙 Sleep Cycle Consolidation Engine"]:::core
         Exporter["📄 Markdown Auto-Exporter"]:::core
         DB[("💾 SQLite FTS5 Storage (~/.amneshia/memory.db)")]:::db
