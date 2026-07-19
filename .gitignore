@@ -23,3 +23,5 @@ dashboard/dist/
 # Scratch & Temporary
 scratch/
 MEMORY.md
+.agents/
+
