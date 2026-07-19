@@ -22,13 +22,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
 
       - name: Install Root Dependencies
-        run: npm ci
+        run: npm install
 
       - name: Install Dashboard Dependencies
-        run: cd dashboard && npm ci
+        run: cd dashboard && npm install
 
       - name: Run TypeScript Type Check
         run: npm run typecheck
